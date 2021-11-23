@@ -55,7 +55,7 @@ const socket = server => {
       user = user.toJSON()
       console.log(roomId)
       console.log(user)
-      io.to(data.roomId).emit('newMessage', { user: user, msg: msg, date: new Date() })
+      io.emit('newMessage', { user: user, msg: msg, date: new Date() })
       postChat(user, data.msg, roomId)
     })
 
